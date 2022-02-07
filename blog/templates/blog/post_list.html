@@ -1,22 +1,11 @@
-<html>
-    <head>
-        <title>Django новый интернет магазин</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Скоро здесь будет интернет магазин с одеждой</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 14.06.2095, 12:14</p>
-            <h2><a href="">Одежда наилучшего качества</a></h2>
-            <p>Текст об одежде,описание товаров</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2059, 12:14</p>
-            <h2><a href="">Второй пост об обуви</a></h2>
-            <p>А тут будет текст об обуви</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
